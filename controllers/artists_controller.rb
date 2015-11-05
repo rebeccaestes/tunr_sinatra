@@ -1,5 +1,5 @@
 get "/artists" do
-  binding.pry
+  # binding.pry
   @all_artist = Artist.all
   erb :"artists/index"
 end

@@ -4,17 +4,10 @@
 
 <p>The <%= @artist.nationality %> artist <strong><%= @artist.name %></strong>'s discography is below.</p>
 
-<% albums = []%>
+<% albums = [] %>
+
 <ul>
-<% @artist.songs.each do |song| %>
- <% album = song.album %>
- <% albums.push(album) %>
- <li><%= song.title %></li>
+<% @songs.each do |song| %>
+  <li><%= song.title %></li>
 <% end %>
 </ul>
-
-<% albums = albums.uniq %>
-<p><%= albums %></p>
-
-
-<!-- # Song.find_by(artist_id: 4) -->
