@@ -28,15 +28,30 @@ end
 
 # Edit (render form to edit existing artist)
 get "/artists/:id/edit" do
-  erb :edit
+  @id = params[:id]
+  @artist = Artist.find(@id)
+  @name = params[:name]
+  @photo_url = params[:photo_url]
+  @nationality = params[:nationality]
+  erb :"artists/edit"
 end
 
 # Update (submit form to update existing artist) 
-put "/artists/:id" do
-  erb :new #????
+put "/artist/:id" do
+  @id = params[:id]	
+  @artist = Artist.find(@id)
+  @name = params[:name]
+  @photo_url = params[:photo_url]
+  @nationality = params[:nationality]
+  @artist.update(name: @name, photo_url: @photo_url, nationality: @nationality)
+  @new_song = params[:new_song]
+  redirect "/artist/#{@id}"
 end
 
 # Destroy (delete an existing artist) - 
 delete "/artists/:id" do
-  erb :index #????
+ @id = params[:id]
+ @artist = Artist.find(@id)
+ @artist.destroy
+ redirect "/artists"
 end

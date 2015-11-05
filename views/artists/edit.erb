@@ -1,0 +1,15 @@
+
+
+<form method="post" action="/artist/<%= @id %>">
+  <input type="hidden" name="_method" value="put">
+  <p><input type='text' name="name" value="<%= @artist.name %>"></p>
+  <p><input type='text' name='photo_url' value="<%= @artist.photo_url %>"></p> 
+  <p><input type='text' name='nationality' value="<%= @artist.nationality %>"></p>
+  <input type='submit'>
+</form>
+
+
+<form method="post" action="/artists/<%= @id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete FOREVER">
+</form>
