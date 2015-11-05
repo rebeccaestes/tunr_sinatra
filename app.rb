@@ -1,6 +1,18 @@
 require 'uri'
 require 'httparty'
 
+require "bundler/setup"
+require "pg"
+require "active_record"
+require "pry"
+require "sinatra"
+require "sinatra/reloader"
+
+require_relative "db/connection"
+require_relative "models/artist"
+require_relative "models/song" 
+require_relative "controllers/artists_controller.rb"
+
 SONGS_PER_ARTIST = 20
 
 artists = [ {name: "Weird Al Yankovich",  nationality: "American", photo_url: "http://i.huffpost.com/gen/1952378/images/o-WEIRD-AL-facebook.jpg"},
@@ -48,3 +60,9 @@ File.open("tunr_seed.sql","w") do |file|
     file.puts("")
   end
 end
+
+get '/' do
+  erb :home
+end
+
+# binding.pry

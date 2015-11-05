@@ -1,0 +1,33 @@
+body {
+  font-family: 'Oxygen', sans-serif;
+  background: #B7DDE2;
+  margin-left: 100px;
+  margin-right: 100px;
+  color: #274459;
+  /*F1FFC9*/
+}
+h1 {
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 24px;
+  margin-left: 5px;
+}
+h3 {
+  padding: 2px 5px 2px 5px;
+  font-family: 'Exo 2', sans-serif;
+}
+p, li {
+  padding: 2px 5px 2px 5px;
+  font-size: 15px;
+}
+
+img {
+  width: 300px;
+  margin-left: 20px;
+}
